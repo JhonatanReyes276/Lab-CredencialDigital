@@ -3,31 +3,172 @@
 }
 
 :root {
-    --cafetal: #1F3D30;
-    --cereza: #B0342A;
-    --tueste: #2B201B;
-    --gris: #6E655F;
-    --hoja: #E4ECE5;
-    --rubor: #F6E3E0;
-    --niebla: #F2F1EF;
-    --blanco: #FFFFFF;
     --fuente-titulos: "Young Serif", Georgia, serif;
     --fuente-texto: "Figtree", Arial, sans-serif;
 }
 
 body {
-    margin: 0;
-    background-color: var(--blanco);
-    color: var(--tueste);
     font-family: var(--fuente-texto);
-    font-size: 1.125rem;
-    line-height: 1.6;
+    background: #05050a;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 40%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.credencial {
+    position: relative;
+    width: 380px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 24px;
+    padding: 35px 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(14, 165, 233, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+    overflow: hidden;
+}
+
+.credencial:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(56, 189, 248, 0.8);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(14, 165, 233, 0.3);
+}
+
+.insignia {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #0ea5e9, #6366f1);
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 6px;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
+    z-index: 10;
+    text-transform: uppercase;
+}
+
+.encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+}
+
+.avatar {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, #0ea5e9, #ec4899);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
 }
 
 .foto {
-    padding: 0px;
-    border: 4px solid #1c5c9c;
-    height: 300px;
-    width: 300px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #1e293b;
 }
 
+.online {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    background-color: #22c55e;
+    color: #05050a;
+    font-size: 0.55rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 8px;
+    border: 2px solid #0f172a;
+    box-shadow: 0 2px 6px rgba(34, 197, 94, 0.4);
+    z-index: 5;
+    letter-spacing: 0.5px;
+}
+
+.nombre {
+    font-family: var(--fuente-titulos);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: 0.5px;
+}
+
+.rol {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #38bdf8;
+    background-color: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    padding: 5px 16px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.informacion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 18px 0;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+}
+
+.item i {
+    font-size: 1.1rem;
+    color: #38bdf8;
+    width: 26px;
+    height: 26px;
+    background: rgba(56, 189, 248, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.item:hover i {
+    transform: scale(1.15) rotate(5deg);
+    background: #ec4899;
+    color: #ffffff;
+}
+
+.pie {
+    text-align: center;
+}
+
+.frase {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #94a3b8;
+    line-height: 1.5;
+    padding: 0 10px;
+}
